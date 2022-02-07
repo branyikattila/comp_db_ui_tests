@@ -2,7 +2,6 @@ package uk.co.acme.mission;
 
 import io.magentys.cinnamon.webdriver.elements.PageElement;
 import uk.co.acme.pages.LandingPage;
-import uk.co.acme.testData.TestData;
 
 import javax.inject.Inject;
 
@@ -12,13 +11,10 @@ import static io.magentys.cinnamon.webdriver.conditions.ElementConditions.enable
 public class LandingPageMissions {
 
     private final LandingPage landingPage;
-    private final TestData testData;
 
     @Inject
-    public LandingPageMissions(final LandingPage landingPage,
-                               final TestData testData) {
+    public LandingPageMissions(final LandingPage landingPage) {
         this.landingPage = landingPage;
-        this.testData = testData;
     }
 
     public LandingPageMissions filterByName(String name) {

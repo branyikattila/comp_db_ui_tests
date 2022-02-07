@@ -1,13 +1,30 @@
-
-{
-  "id": "1st",
-  "input details": [
-    "Name: First Comp",
-    "Introduced: 01-04-1974",
-    "Discontinued: 01-09-2000",
-    "Company: Atari"
-  ],
-  "Name": "First  Computer",
-  "introduced": "01-04-1974",
-  "discontinued": "01-09-2000"
-}
+[
+  {
+ "id": "1",
+ "name": "First Computer",
+ "introduced": "1974-01-04",
+ "discontinued": "2000-01-09",
+ "company": "Atari"
+ },
+ {
+      "id": "2",
+  "name": "Second  Computer",
+  "introduced": "1975-01-04",
+  "discontinued": "2000-01-09",
+  "company": "Atari"
+ },
+  {
+    "id": "3",
+    "name": "ACE",
+    "introduced": "1058-01-01",
+    "discontinued": "1978-01-01",
+    "company": "IBM"
+  },
+  {
+    "id": "4",
+    "name": "AC1",
+    "introduced": "1037-01-01",
+    "discontinued": "1978-01-01",
+    "company": "Sony"
+  }
+]

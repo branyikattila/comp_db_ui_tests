@@ -8,7 +8,7 @@ import uk.co.acme.mission.LandingPageMissions;
 import uk.co.acme.pages.EditCompPage;
 import uk.co.acme.pages.LandingPage;
 import cucumber.api.java.Before;
-import uk.co.acme.testData.TestData;
+import uk.co.acme.utils.Utils;
 
 import static io.magentys.cinnamon.webdriver.Browser.open;
 import static io.magentys.cinnamon.webdriver.conditions.ElementConditions.*;
@@ -21,18 +21,17 @@ public class Hooks {
     private final LandingPage landingPage;
     private final LandingPageMissions landingPageMissions;
     private final EditCompPage editCompPage;
-    private final TestData testData;
-
+    private final Utils utils;
     @Inject
     public Hooks(final Env env, final LandingPage landingPage,
                  final LandingPageMissions landingPageMissions,
                  final EditCompPage editCompPage,
-                 final TestData testData) {
+                 final Utils utils) {
         this.env = env;
         this.landingPage = landingPage;
         this.landingPageMissions = landingPageMissions;
         this.editCompPage = editCompPage;
-        this.testData = testData;
+        this.utils = utils;
     }
 
     @Before("@openPage")
@@ -41,14 +40,4 @@ public class Hooks {
         assertThat("Cannot open the website", landingPage.logoTop.waitUntil(displayed).isPresent(), equalTo(true));
     }
 
-
-    @After("@deleteEntryData1")
-    public void deleteEntryData1() throws Throwable {
-    //TODO for clean up
-
-        String name = testData.getTestDataByFieldName(testData.test_data2).get("Name");
-        landingPageMissions.filterByName(name).selectByNameFromResult(name);
-        editCompPage.clickDeleteBtn();
-        assertThat("Cannot delete computer", landingPage.getMessage(), equalTo("Done ! Computer ACE has been deleted"));
-    }
 }

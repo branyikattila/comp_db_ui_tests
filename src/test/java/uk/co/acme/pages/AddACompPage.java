@@ -3,6 +3,7 @@ package uk.co.acme.pages;
 import io.magentys.cinnamon.webdriver.elements.PageElement;
 import io.magentys.cinnamon.webdriver.support.FindByKey;
 import org.openqa.selenium.support.FindBy;
+import uk.co.acme.model.TestDataModel;
 
 import java.util.HashMap;
 
@@ -39,14 +40,14 @@ public class AddACompPage {
             return this;
         }
 
-        public AddACompPage fillInCreateForm(HashMap<String, String> data) {
+        public AddACompPage fillInCreateForm(TestDataModel dataModel) {
             compName.waitUntil(displayed.and(enabled)).clear();
-            compName.fillIn(data.get("Name"));
+            compName.fillIn(dataModel.getName());
             introduced.waitUntil(displayed.and(enabled)).clear();
-            introduced.fillIn(data.get("Introduced"));
+            introduced.fillIn(dataModel.getIntroduced());
             discontinued.waitUntil(displayed.and(enabled)).clear();
-            discontinued.fillIn(data.get("Discontinued"));
-            company.select().byVisibleText(data.get("Company"));
+            discontinued.fillIn(dataModel.getDiscontinued());
+            company.select().byVisibleText(dataModel.getCompany());
             return this;
         }
 }
