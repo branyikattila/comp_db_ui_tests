@@ -1,0 +1,13 @@
+
+{
+  "id": "1st",
+  "input details": [
+    "Name: First Comp",
+    "Introduced: 01-04-1974",
+    "Discontinued: 01-09-2000",
+    "Company: Atari"
+  ],
+  "Name": "First  Computer",
+  "introduced": "01-04-1974",
+  "discontinued": "01-09-2000"
+}
